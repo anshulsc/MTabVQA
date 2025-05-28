@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>MTabVQA: Evaluating Multi-Tabular Reasoning of Language Models in Visual Space</title>
+        <link rel="icon" type="image/x-icon" href="./static/img/icons/mtabvqa_favicon.png"> <!-- UPDATE FAVICON -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph -->
+        <meta property="og:url" content="YOUR_PROJECT_PAGE_URL_HERE" /> <!-- UPDATE URL -->
+        <meta property="og:image" content="./static/img/image.png" /> <!-- UPDATE Teaser Image Path -->
+        <meta property="og:title" content="MTabVQA: Evaluating Multi-Tabular Reasoning of Language Models in Visual Space" />
+        <meta property="og:description" content="MTabVQA is a novel benchmark for multi-tabular visual question answering, designed to assess VLMs' ability to reason over multiple visually rendered table images." />
+
+        <!-- Twitter -->
+        <meta name="twitter:url" content="YOUR_PROJECT_PAGE_URL_HERE" /> <!-- UPDATE URL -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="./static/img/mtabvqa_teaser_fig1.png" /> <!-- UPDATE Teaser Image Path -->
+        <meta name="twitter:title" content="MTabVQA: Evaluating Multi-Tabular Reasoning of Language Models in Visual Space" />
+        <meta name="twitter:description" content="MTabVQA is a novel benchmark for multi-tabular visual question answering, designed to assess VLMs' ability to reason over multiple visually rendered table images." />
+
+        <script src="./static/js/distill_template.v2.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+        <script src="https://rawgit.com/nstrayer/slid3r/master/dist/slid3r.js"></script>
+
+        <script defer="" src="./static/js/hider.js"></script>
+        <script src="./static/js/image_interact.js"></script>
+        <script src="./static/js/switch_videos.js"></script>
+
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+
+        <!-- medium zoom https://github.com/francoischalifour/medium-zoom -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>  <!-- jquery -->
+        <script defer src="./static/js/medium-zoom.min.js"></script>
+        <script defer src="./static/js/zoom.js"></script>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <div class="header-container" id="header-container">
+                <div class="header-content">
+                    <h2 class="main-title"><i>MTabVQA</i>: Evaluating Multi-Tabular Reasoning of Language Models in Visual Space</h2>
+
+                    <div class="button-container">
+                        <a href="https://arxiv.org/abs/YOUR_ARXIV_ID" class="button paper-link" target="_blank"> <!-- UPDATE ARXIV LINK -->
+                            <span class="icon is-small">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            arXiv
+                        </a>
+                        <a href="https://arxiv.org/pdf/YOUR_ARXIV_ID" class="button paper-link" target="_blank"> <!-- UPDATE PDF LINK -->
+                            <span class="icon is-small">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>PDF</span>
+                        </a>
+                        <a href="YOUR_GITHUB_REPO_LINK" class="button" target="_blank"> <!-- UPDATE GITHUB LINK -->
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code & Dataset</span>
+                        </a>
+                        <a href="YOUR_HF_COLLECTION_LINK" class="button" target="_blank"> <!-- UPDATE HUGGING FACE LINK -->
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" class="hf-logo">
+                            </span>
+                            <span>HuggingFace</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <!-- You can use the same main teaser image here or a different overview image if preferred -->
+                    <img src="static/img/icons/image.png" alt="MTabVQA Teaser Image" class="teaser-image big-teaser" style="width: 1000px;"> <!-- UPDATE IMAGE PATH -->
+                </div>
+            </div>
+        </div>
+
+    <d-article>
+        <div class="byline">
+            <div class="byline-container">
+                <p>
+                    <a href="#" class="author-link" target="_blank">Anshul Singh<sup>1</sup></a>   <!-- Add personal link if available -->
+                    <a href="https://www.lt.informatik.uni-hamburg.de/de/people/chris-biemann" class="author-link" target="_blank">Chris Biemann<sup>2</sup></a>  
+                    <a href="https://www.lt.informatik.uni-hamburg.de/de/people/jan-strich" class="author-link" target="_blank">Jan Strich<sup>2</sup></a>  
+                    <p></p>
+                    <div class="affiliation-link" id="affiliation" target="_blank"><sup>1</sup>Department of Information Technology, Panjab University<br>
+                        <sup>2</sup>Language Technology Group, Universität Hamburg<br>
+                </p>
+            </div>
+        </div>
+        <p style="text-align: center;">
+            <span class="author-note">Corresponding authors: anshulsinghchambial@gmail.com, chris.biemann@uni-hamburg.de, jan.strich@uni-hamburg.de</span>
+        </p>
+
+
+        <p class="text abstract">
+            Vision-Language Models (VLMs) struggle with reasoning over multiple visually presented tables, a common real-world scenario. Existing benchmarks don't adequately assess this multi-tabular visual reasoning. 
+            We introduce MTabVQA, a benchmark with 3,745 complex question-answer pairs requiring multi-hop reasoning across several table images. Our evaluations reveal significant VLM limitations. We also release MTabVQA-Instruct, 
+            a large-scale instruction-tuning dataset. Fine-tuning VLMs with MTabVQA-Instruct substantially improves their performance on this challenging visual multi-tabular reasoning task.
+        </p>
+
+        <p class="text abstract">
+            Our main contributions are:
+            <ol class="text">
+                <li>We introduce <strong>MTabVQA-Eval</strong>, a novel benchmark designed to evaluate multi-hop reasoning over multiple tables presented as images, addressing a key gap in existing table QA benchmarks.</li>
+                <li>We provide extensive benchmark results for SOTA open-source and proprietary VLMs on MTabVQA, revealing significant challenges posed by this task.</li>
+                <li>We release <strong>MTabVQA-Instruct</strong>, a large-scale instruction-tuning dataset.</li>
+                <li>We introduce <strong>TableVision</strong>, a VLM fine-tuned on MTabVQA-Instruct, which shows significant improvements on visual multi-tabular reasoning.</li>
+            </ol>
+        </p>
+
+
+        <div class="icon-row">
+            <a href="#benchmark" class="icon-link">
+                MTabVQA-Eval Benchmark
+            </a>
+            <a href="#instruct_tablevision" class="icon-link">
+                MTabVQA-Instruct & TableVision
+            </a>
+            <a href="#results" class="icon-link">
+                Results & Analysis
+            </a>
+        </div>
+
+        <p class="click-hint" style="width: 85%;">
+            <img src="./static/img/icons/click.gif" style="width: 1.5rem">
+            <strong>Click to jump to each section.</strong>
+        </p>
+
+        <hr>
+
+        <div id='benchmark' class="exploration-block">
+            <div id="sec:benchmark" class="sub-section">
+                <h1 class="text">MTabVQA-Eval Benchmark</h1>
+                <p class="text">
+                    Traditional benchmarks for table understanding and QA often focus on single-table scenarios or non-visual data.
+                    MTabVQA addresses the challenge of robust interpretation and reasoning over multi-tabular data presented as images, common in web pages, PDFs, and digital documents.
+                </p>
+                <p class="text">
+                    <strong>MTabVQA-Eval</strong> comprises <strong>3,745 complex question-answer pairs</strong>. These pairs necessitate multi-hop reasoning by integrating information from two to five visually rendered table images.
+                    The benchmark is designed to evaluate how well models can:
+                    <ul class="text">
+                        <li>Understand diverse visual table layouts presented as images.</li>
+                        <li>Parse and correlate information across multiple, physically separate tables.</li>
+                        <li>Execute multi-hop reasoning grounded in visual data.</li>
+                    </ul>
+                    MTabVQA utilizes tabular data from diverse sources like BIRD, Spider, QFMTS, MiMoTable, and ATIS, prioritizing text-to-SQL datasets for their inherent multi-table join operations.
+                </p>
+
+                <d-figure id="fig:framework" style="display: flex; justify-content: center; align-items: center;">
+                    <figure style="margin-left: 5px;">
+                        <img data-zoomable="" draggable="false" src="./static/img/framework.png" alt="MTabVQA Construction Framework" style="width: 110%; margin: 0 auto;" class="center"> <!-- UPDATE IMAGE PATH -->
+                    </figure>
+                </d-figure>
+                <figcaption style="text-align: center; margin-top: -30px;">
+                    <strong>Figure 1:</strong> MTabVQA Construction Framework Overview. (1) Data Sourcing & Sampling. (2) Visual QA Generation. (3) Verification & Finalization.
+                </figcaption>
+
+                <p class="text">
+                    Questions in MTabVQA cover 14 distinct reasoning categories, including aggregation, comparison, fact-checking, ranking, and descriptive analysis, ensuring a comprehensive evaluation of reasoning capabilities.
+                </p>
+                <d-figure id="fig:categories" style="display: flex; justify-content: center;">
+                    <figure style="margin-left: 30px;">
+                        <img data-zoomable="" draggable="false" src="./static/img/comp.png" alt="MTabVQA Question Categories" style="width: 70%" class="center"> <!-- UPDATE IMAGE PATH -->
+                    </figure>
+                </d-figure>
+                <figcaption style="text-align: center; margin-top: -30px;">
+                    <strong>Figure 2:</strong> Distribution of Verified Question Categories in the MTabVQA dataset.
+                </figcaption>
+                 <p class="text">
+                    Table images are generated with significant visual diversity (10 distinct styling themes) to mimic real-world appearances, challenging models on robust OCR and layout understanding.
+                </p>
+            </div>
+        </div>
+
+        <div id='instruct_tablevision' class="exploration-block">
+             <div id="sec:instruct_tablevision" class="sub-section">
+                <h1 class="text">MTabVQA-Instruct & TableVision</h1>
+                <p class="text">
+                    To enhance the multi-tabular reasoning abilities of VLMs, we developed <strong>MTabVQA-Instruct</strong>, a large-scale instruction-tuning dataset.
+                    It contains <strong>15,853 instruction-following examples</strong> derived from various multi-table datasets. These examples are designed to train VLMs to understand and follow complex instructions involving multiple visual tables.
+                </p>
+                <p class="text">
+                    Building on this dataset, we introduce <strong>TableVision</strong>. This model is a VLM (specifically, Qwen2.5-VL-7B as its base) fine-tuned on MTabVQA-Instruct using LoRA (rank 128).
+                    TableVision demonstrates the effectiveness of targeted instruction tuning for visual multi-tabular reasoning.
+                </p>
+            </div>
+        </div>
+
+
+        <div id='results' class="model-block">
+            <div id="sec:results" class="sub-section">
+                <h1 class="text">Key Results & Analysis</h1>
+                <p class="text">
+                    We benchmarked leading open-source and proprietary VLMs on MTabVQA-Eval.
+                    The results highlight the difficulty of the task, with open-source VLMs struggling significantly in zero-shot settings. For instance, LLaVA-One-Vision achieved only 2.2% EM and 16.7% F1 overall.
+                    Even proprietary models like GPT-4.1 (37.0% EM, 61.7% F1) showed performance limitations, particularly on certain dataset splits.
+                </p>
+                <p class="text">
+                    Our fine-tuned model, <strong>TableVision</strong>, achieved the highest overall performance (<strong>43.4% EM, 68.2% F1</strong>), surpassing all other models, including GPT-4.1, on several splits. This underscores the value of targeted fine-tuning with MTabVQA-Instruct.
+                </p>
+                <d-figure id="fig:results_table" style="display: flex; justify-content: center;">
+                    <figure style="text-align: center;">
+                        <img data-zoomable="" draggable="false" src="./static/img/table1.png" alt="MTabVQA Main Results" style="width: 120%" class="center"> <!-- UPDATE IMAGE PATH -->
+                    </figure>
+                </d-figure>
+                <figcaption style="text-align: center; margin-top: -30px;">
+                    <strong>Table 1:</strong> Performance Comparison of VLMs on MTabVQA-Eval Splits (%), and Overall EM/F1 (%).
+                </figcaption>
+
+                <h2 class="text">Post-Training Strategies (SFT, CoT, GRPO)</h2>
+                <p class="text">
+                    To explore methods for enhancing VLM performance, we investigated several post-training techniques using a subset of MTabVQA-Instruct (2,395 QA pairs from the Spider data source) with the Qwen2.5-VL-3B model.
+                    We compared Supervised Fine-Tuning (SFT), Chain-of-Thought (CoT) prompting, and Group Relative Policy Optimization (GRPO).
+                </p>
+                <p class="text">
+                    SFT yielded substantial performance gains over both CoT and GRPO, boosting EM to 28.0% and F1 to 55.9% on the corresponding MTabVQA-Eval split. This demonstrates the strong effectiveness of targeted instruction tuning for this complex multi-hop reasoning task. While GRPO showed improvement, its gains did not surpass SFT with LoRA, possibly due to the challenge of defining a more sophisticated reward function for visual multi-tabular reasoning.
+                </p>
+                <d-figure id="fig:post_training_sft_cot_grpo" style="display: flex; justify-content: center;">
+                    <figure style="text-align: center; margin-left: 10px;">
+                        <img data-zoomable="" draggable="false" src="./static/img/bars.png" alt="Performance of Post-Training Strategies" style="width: 85%" class="center"> <!-- UPDATE IMAGE PATH to Figure 4 -->
+                      
+                    </figure>
+                </d-figure>
+                <figcaption style="text-align: center; margin-top: -30px;">
+                    <strong>Figure 3:</strong> Performance comparison of Qwen2.5-VL-3B on the MTabVQA-Eval using different post-training strategies.
+                </figcaption>
+
+                <h2 class="text">Impact of Post-Training Data Scale and Source</h2>
+                <p class="text">
+                    We further analyzed how VLM performance is affected by the scale and source of data used for instruction fine-tuning. Using Qwen2.5-VL-7B as the base VLM, we fine-tuned it on several MTabVQA-Instruct subsets derived from different original data sources (Spider, MultiTabQA, MiMo+ATIS, and the full MTabVQA-Instruct set).
+                </p>
+                <p class="text">
+                    Generally, more fine-tuning data led to better EM and F1 scores. The model trained on the full MTabVQA-Instruct dataset (15,853 diverse examples) achieved the highest overall F1 score (68.2%). However, the source of the data was critically important. For instance, a model trained only on the large MultiTabQA subset performed surprisingly poorly overall, suggesting that data characteristics and alignment with the benchmark are crucial. This highlights that while scaling instruction data is advantageous, the relevance and diversity of this data with respect to the target tasks are paramount for achieving optimal performance and generalization.
+                </p>
+                 <d-figure id="fig:data_scale_results" style="display: flex; justify-content: center;">
+                    <figure style="text-align: center;">
+                        <img data-zoomable="" draggable="false" src="./static/img/data.png" alt="Impact of Data Scale and Source" style="width: 120%" class="center"> <!-- UPDATE IMAGE PATH to Table 4 -->
+                    </figure>
+                </d-figure>
+                <figcaption style="text-align: center; margin-top: -30px;">
+                    <strong>Table 2:</strong> Performance of fine-tuned models on dataset splits of MTabVQA-Instruct measuring the influence of dataset on the overall performance.
+                </figcaption>
+            </div>
+        </div>
+
+        <div id="acknowledgement" style="position: relative; margin-top: 40px; margin-bottom: 0px;">
+            <h2 class="text" style="margin-top:0px; margin-bottom:10px">Acknowledgement</h2>
+            <p class="text">
+                The authors would like to thank the Pangea team for their <a href="https://neulab.github.io/Pangea/" target="_blank">project webpage template</a>, which served as a basis for this page.
+            </p>
+        </div>
+
+        </d-article>
+        <d-appendix>
+            <h3>BibTeX</h3>
+            <p class="bibtex">
+@article{singh2025mtabvqa, <br>
+  author       = {Anshul Singh and Chris Biemann and Jan Strich}, <br>
+  title        = {{MTabVQA}: Evaluating Multi-Tabular Reasoning of Language Models in Visual Space}, <br>
+  journal      = {arXiv preprint arXiv:YOUR_ARXIV_ID}, <br> <!-- UPDATE ARXIV ID -->
+  year         = {2025}, <br> <!-- Or the correct year -->
+  url          = {https://arxiv.org/abs/YOUR_ARXIV_ID}, <br> <!-- UPDATE ARXIV LINK -->
+  eprinttype   = {arXiv}, <br>
+  eprint       = {YOUR_ARXIV_ID}, <br> <!-- UPDATE ARXIV ID -->
+}
+            </p>
+
+            <d-footnote-list></d-footnote-list>
+            <d-citation-list></d-citation-list>
+        </d-appendix>
+        <!-- bibliography will be inlined during Distill pipeline's pre-rendering -->
+        <d-bibliography src="reference.bib"></d-bibliography> <!-- You might need to create/update this file -->
+        <script src="./static/js/nav-bar.js"></script>
+    </body>
+</html>
