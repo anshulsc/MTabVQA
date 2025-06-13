@@ -17,11 +17,10 @@
   <link href="./style/font-awesome.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="./style/all.css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
-  
+
   <!-- Custom styles for this template -->
   <link href="./style/clean-blog.min.css" rel="stylesheet" />
   <link href="./style/custom.css" rel="stylesheet" />
-  <link href="./style/patch.css" rel="stylesheet" />
 
 </head>
 
@@ -36,7 +35,8 @@
           </a>
           <a href="https://www.lt.informatik.uni-hamburg.de/de" target="_blank"
             class="d-flex justify-content-center align-items-center ms-auto" style="width: 50%;">
-            <img src="img/lt-logo.png" alt="Language Technology Group Logo" class="img-fluid" style="max-height: 120px;">
+            <img src="img/lt-logo.png" alt="Language Technology Group Logo" class="img-fluid"
+              style="max-height: 100px;">
           </a>
         </div>
         <div class="col-lg-8 mx-auto text-center">
@@ -54,23 +54,7 @@
   <div class="container-fluid">
     <div class="container" id="main">
       <div class="row mb-3">
-        <div class="col-lg-10 col-md-12 mx-auto text-center">
-          <p style="font-size: 1.2rem;">
-            <a href="https://anshulsc.live" class="author-link" target="_blank">Anshul Singh<sup>1</sup></a>  
-            <a href="https://www.lt.informatik.uni-hamburg.de/de/people/chris-biemann" class="author-link"
-              target="_blank">Chris Biemann<sup>2</sup></a>  
-            <a href="https://www.lt.informatik.uni-hamburg.de/de/people/jan-strich" class="author-link"
-              target="_blank">Jan Strich<sup>2</sup></a>
-          </p>
-          <p>
-            <sup>1</sup>Department of Information Technology, Panjab University<br>
-            <sup>2</sup>Language Technology Group, Universität Hamburg
-          </p>
-          <p>
-            <span class="author-note">anshulsinghchambial@gmail.com,
-              chris.biemann@uni-hamburg.de, jan.strich@uni-hamburg.de</span>
-          </p>
-        </div>
+
       </div>
 
       <div class="row mb-5 align-items-stretch">
@@ -86,17 +70,17 @@
               limitations. We also release MTabVQA-Instruct, a large-scale instruction-tuning dataset.
             </p>
             <h4>Our main contributions are:</h4>
-<ul>
-    <li>We introduce <strong>MTabVQA-Eval</strong>, a novel benchmark designed to evaluate
-        multi-hop reasoning over multiple tables presented as images, addressing a key gap in
-        existing table QA benchmarks.</li>
-    <li>We provide extensive benchmark results for SOTA open-source and proprietary VLMs on
-        MTabVQA, revealing significant challenges posed by this task.</li>
-    <li>We release <strong>MTabVQA-Instruct</strong>, a large-scale instruction-tuning dataset.
-    </li>
-    <li>We introduce <strong>TableVision</strong>, a VLM fine-tuned on MTabVQA-Instruct, which
-        shows significant improvements on visual multi-tabular reasoning.</li>
-</ul>
+            <ul>
+              <li>We introduce <strong>MTabVQA-Eval</strong>, a novel benchmark designed to evaluate
+                multi-hop reasoning over multiple tables presented as images, addressing a key gap in
+                existing table QA benchmarks.</li>
+              <li>We provide extensive benchmark results for SOTA open-source and proprietary VLMs on
+                MTabVQA, revealing significant challenges posed by this task.</li>
+              <li>We release <strong>MTabVQA-Instruct</strong>, a large-scale instruction-tuning dataset.
+              </li>
+              <li>We introduce <strong>TableVision</strong>, a VLM fine-tuned on MTabVQA-Instruct, which
+                shows significant improvements on visual multi-tabular reasoning.</li>
+            </ul>
             <div id="button-group">
               <div class="button-row">
                 <a href="https://arxiv.org/abs/YOUR_ARXIV_ID" target="_blank">
@@ -145,6 +129,16 @@
 }
             </pre>
           </div>
+          <h4>Authors</h4>
+          <ul style="font-size: 1.1rem; list-style: none; padding-left: 0;">
+            <li><a href="https://anshulsc.live" class="author-link" target="_blank">Anshul Singh<sup>1</sup></a></li>
+            <li><a href="https://www.inf.uni-hamburg.de/en/inst/ab/lt/people/chris-biemann.html" class="author-link"
+                target="_blank">Chris Biemann<sup>2</sup></a></li>
+            <li><a href="https://www.hcds.uni-hamburg.de/hcds/team/jan-strich.html" class="author-link"
+                target="_blank">Jan Strich<sup>2</sup></a></li>
+          </ul>
+          <sup>1</sup> Department of Information Technology, Panjab University<br>
+          <sup>2</sup> Language Technology Group, Universität Hamburg
         </div>
       </div>
 
@@ -184,28 +178,68 @@
                   </tr>
                   <tr>
                     <td>Gemma-3-12B-IT</td>
-                    <td>15.6</td><td>48.0</td><td>10.3</td><td>38.1</td><td>11.6</td><td>35.1</td>
-                    <td>9.3</td><td>18.6</td><td>11.8</td><td>40.1</td>
+                    <td>15.6</td>
+                    <td>48.0</td>
+                    <td>10.3</td>
+                    <td>38.1</td>
+                    <td>11.6</td>
+                    <td>35.1</td>
+                    <td>9.3</td>
+                    <td>18.6</td>
+                    <td>11.8</td>
+                    <td>40.1</td>
                   </tr>
                   <tr>
                     <td>Qwen2.5-VL-7B</td>
-                    <td>8.0</td><td>39.8</td><td>7.8</td><td>33.9</td><td>6.3</td><td>32.6</td>
-                    <td>9.3</td><td>22.2</td><td>7.8</td><td>35.1</td>
+                    <td>8.0</td>
+                    <td>39.8</td>
+                    <td>7.8</td>
+                    <td>33.9</td>
+                    <td>6.3</td>
+                    <td>32.6</td>
+                    <td>9.3</td>
+                    <td>22.2</td>
+                    <td>7.8</td>
+                    <td>35.1</td>
                   </tr>
                   <tr>
                     <td>InternVL3-8B-Instruct</td>
-                    <td>6.1</td><td>32.4</td><td>5.2</td><td>24.8</td><td>3.6</td><td>20.3</td>
-                    <td>7.0</td><td>19.1</td><td>5.4</td><td>26.6</td>
+                    <td>6.1</td>
+                    <td>32.4</td>
+                    <td>5.2</td>
+                    <td>24.8</td>
+                    <td>3.6</td>
+                    <td>20.3</td>
+                    <td>7.0</td>
+                    <td>19.1</td>
+                    <td>5.4</td>
+                    <td>26.6</td>
                   </tr>
                   <tr>
                     <td>Phi-3.5-Vision-Instruct</td>
-                    <td>2.9</td><td>26.1</td><td>2.4</td><td>22.0</td><td>1.8</td><td>15.0</td>
-                    <td>0.8</td><td>3.2</td><td>2.5</td><td>22.3</td>
+                    <td>2.9</td>
+                    <td>26.1</td>
+                    <td>2.4</td>
+                    <td>22.0</td>
+                    <td>1.8</td>
+                    <td>15.0</td>
+                    <td>0.8</td>
+                    <td>3.2</td>
+                    <td>2.5</td>
+                    <td>22.3</td>
                   </tr>
                   <tr>
                     <td>LLaVA-One-Vision-Qwen2-7B</td>
-                    <td>2.2</td><td>20.0</td><td>2.3</td><td>15.7</td><td>0.0</td><td>9.2</td>
-                    <td>0.7</td><td>5.5</td><td>2.1</td><td>18.4</td>
+                    <td>2.2</td>
+                    <td>20.0</td>
+                    <td>2.3</td>
+                    <td>15.7</td>
+                    <td>0.0</td>
+                    <td>9.2</td>
+                    <td>0.7</td>
+                    <td>5.5</td>
+                    <td>2.1</td>
+                    <td>18.4</td>
                   </tr>
                   <tr class="table-group-header">
                     <td colspan="11" class="text-center" style="background-color: #e9ecef; font-weight: bold;">
@@ -213,13 +247,29 @@
                   </tr>
                   <tr>
                     <td>GPT-4.1</td>
-                    <td>49.0</td><td>74.3</td><td>34.2</td><td>58.5</td><td>6.3</td><td>39.9</td>
-                    <td>20.2</td><td>39.6</td><td>37.0</td><td>61.7</td>
+                    <td>49.0</td>
+                    <td>74.3</td>
+                    <td>34.2</td>
+                    <td>58.5</td>
+                    <td>6.3</td>
+                    <td>39.9</td>
+                    <td>20.2</td>
+                    <td>39.6</td>
+                    <td>37.0</td>
+                    <td>61.7</td>
                   </tr>
                   <tr>
                     <td>Gemini-2.0-Flash</td>
-                    <td>42.9</td><td>68.5</td><td>31.4</td><td>57.3</td><td>22.3</td><td>36.0</td>
-                    <td>24.0</td><td>42.3</td><td>34.1</td><td>59.3</td>
+                    <td>42.9</td>
+                    <td>68.5</td>
+                    <td>31.4</td>
+                    <td>57.3</td>
+                    <td>22.3</td>
+                    <td>36.0</td>
+                    <td>24.0</td>
+                    <td>42.3</td>
+                    <td>34.1</td>
+                    <td>59.3</td>
                   </tr>
                   <tr class="table-group-header">
                     <td colspan="11" class="text-center" style="background-color: #e9ecef; font-weight: bold;">
@@ -227,9 +277,15 @@
                   </tr>
                   <tr style="background-color: #d1ecf1;">
                     <td><strong>TableVision (Ours)</strong></td>
-                    <td><strong>32.4</strong></td><td><strong>64.3</strong></td><td><strong>49.8</strong></td>
-                    <td><strong>72.6</strong></td><td><strong>33.0</strong></td><td><strong>45.9</strong></td>
-                    <td><strong>20.2</strong></td><td><strong>36.2</strong></td><td><strong>43.4</strong></td>
+                    <td><strong>32.4</strong></td>
+                    <td><strong>64.3</strong></td>
+                    <td><strong>49.8</strong></td>
+                    <td><strong>72.6</strong></td>
+                    <td><strong>33.0</strong></td>
+                    <td><strong>45.9</strong></td>
+                    <td><strong>20.2</strong></td>
+                    <td><strong>36.2</strong></td>
+                    <td><strong>43.4</strong></td>
                     <td><strong>68.2</strong></td>
                   </tr>
                 </tbody>
@@ -238,95 +294,116 @@
           </div>
         </div>
       </div>
-      
+
       <!-- MTabVQA-Eval Benchmark Section -->
       <div class="row mb-4">
         <div class="col-xl-12">
-            <div class="card card-outline-secondary">
-                <div class="card-header" id="leaderboard-header">
-                    MTabVQA-Eval Benchmark
-                </div>
-                <div class="card-body">
-                    <p>
-                        Traditional benchmarks for table understanding and QA often focus on single-table scenarios or non-visual data. MTabVQA addresses the challenge of robust interpretation and reasoning over multi-tabular data presented as images, common in web pages, PDFs, and digital documents.
-
-                        <strong>MTabVQA-Eval</strong> comprises <strong>3,745 complex question-answer
-                            pairs</strong> requiring multi-hop reasoning across two to five table images.The benchmark is designed to evaluate how well models can:
-
-              
-                        <ul>
-                            <li>Understand diverse visual table layouts presented as images.</li>
-                            <li>Parse and correlate information across multiple, physically separate tables.</li>
-                            <li>Execute multi-hop reasoning grounded in visual data.</li>
-                        </ul>
-                    </p>
-                    <figure class="text-center">
-                        <img src="./img/framework.png" alt="MTabVQA Construction Framework"
-                            style="width: 100%; margin: 0 auto;" class="img-fluid">
-                        <figcaption style="margin-top: 10px;">
-                            <strong>Figure 1:</strong> MTabVQA Construction Framework Overview.
-                        </figcaption>
-                    </figure>
-                    <p>
-                        Table images are generated with significant visual diversity (10 distinct styling themes) to mimic real-world appearances, challenging models on robust OCR and layout understanding. Questions in MTabVQA cover distinct reasoning categories like aggregation,
-                        comparison, fact-checking, and ranking. 
-                    </p>
-                    <figure class="text-center">
-                        <img src="./img/comp.png" alt="MTabVQA Question Categories" style="width: 80%"
-                            class="img-fluid">
-                        <figcaption style="margin-top: 10px;">
-                            <strong>Figure 2:</strong> Distribution of Verified Question Categories in the
-                            MTabVQA dataset.
-                        </figcaption>
-                    </figure>
-                </div>
+          <div class="card card-outline-secondary">
+            <div class="card-header" id="leaderboard-header">
+              MTabVQA-Eval Benchmark
             </div>
+            <div class="card-body">
+              <p>
+                Traditional benchmarks for table understanding and QA often focus on single-table scenarios or
+                non-visual data. MTabVQA addresses the challenge of robust interpretation and reasoning over
+                multi-tabular data presented as images, common in web pages, PDFs, and digital documents.
+
+                <strong>MTabVQA-Eval</strong> comprises <strong>3,745 complex question-answer
+                  pairs</strong> requiring multi-hop reasoning across two to five table images.The benchmark is designed
+                to evaluate how well models can:
+
+
+              <ul>
+                <li>Understand diverse visual table layouts presented as images.</li>
+                <li>Parse and correlate information across multiple, physically separate tables.</li>
+                <li>Execute multi-hop reasoning grounded in visual data.</li>
+              </ul>
+              </p>
+              <figure class="text-center">
+                <img src="./img/framework.png" alt="MTabVQA Construction Framework" style="width: 100%; margin: 0 auto;"
+                  class="img-fluid">
+                <figcaption style="margin-top: 10px;">
+                  <strong>Figure 1:</strong> MTabVQA Construction Framework Overview.
+                </figcaption>
+              </figure>
+              <p>
+                Table images are generated with significant visual diversity (10 distinct styling themes) to mimic
+                real-world appearances, challenging models on robust OCR and layout understanding. Questions in MTabVQA
+                cover distinct reasoning categories like aggregation,
+                comparison, fact-checking, and ranking.
+              </p>
+              <figure class="text-center">
+                <img src="./img/comp.png" alt="MTabVQA Question Categories" style="width: 80%" class="img-fluid">
+                <figcaption style="margin-top: 10px;">
+                  <strong>Figure 2:</strong> Distribution of Verified Question Categories in the
+                  MTabVQA dataset.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
-      
+
       <!-- Analysis Section -->
       <div class="row mb-4">
         <div class="col-xl-12">
-            <div class="card card-outline-secondary">
-                <div class="card-header" id="leaderboard-header">Analysis</div>
-                <div class="card-body" style="margin-bottom: 10px; padding-bottom: 10px;">
-                    <h5 class="mt-2" style="margin-top: 10px;">Post-Training Strategies (SFT, CoT, GRPO)</h5>
-                    <p>
-                        To explore methods for enhancing VLM performance, we investigated several post-training techniques using a subset of MTabVQA-Instruct (2,395 QA pairs from the Spider data source) with the Qwen2.5-VL-3B model. We compared Supervised Fine-Tuning (SFT), Chain-of-Thought (CoT) prompting, and Group Relative Policy Optimization (GRPO).
+          <div class="card card-outline-secondary">
+            <div class="card-header" id="leaderboard-header">Analysis</div>
+            <div class="card-body" style="margin-bottom: 10px; padding-bottom: 10px;">
+              <h5 class="mt-2" style="margin-top: 10px;">Post-Training Strategies (SFT, CoT, GRPO)</h5>
+              <p>
+                To explore methods for enhancing VLM performance, we investigated several post-training techniques using
+                a subset of MTabVQA-Instruct (2,395 QA pairs from the Spider data source) with the Qwen2.5-VL-3B model.
+                We compared Supervised Fine-Tuning (SFT), Chain-of-Thought (CoT) prompting, and Group Relative Policy
+                Optimization (GRPO).
 
-                        SFT yielded substantial performance gains over both CoT and GRPO, boosting EM to 28.0% and F1 to 55.9% on the corresponding MTabVQA-Eval split. This demonstrates the strong effectiveness of targeted instruction tuning for this complex multi-hop reasoning task. While GRPO showed improvement, its gains did not surpass SFT with LoRA, possibly due to the challenge of defining a more sophisticated reward function for visual multi-tabular reasoning.
-                    </p>
-                    <figure class="text-center">
-                        <img src="./img/bars.png" alt="Performance of Post-Training Strategies" style="width: 80%"
-                            class="img-fluid">
-                        <figcaption style="margin-top: 100px;">
-                            <strong>Figure 3:</strong> Performance comparison of post-training strategies.
-                        </figcaption>
-                    </figure>
-      
-                    <h4 class="mt-4">Impact of Post-Training Data Scale and Source</h4>
-                    <p>
-                        We further analyzed how VLM performance is affected by the scale and source of data used for instruction fine-tuning. Using Qwen2.5-VL-7B as the base VLM, we fine-tuned it on several MTabVQA-Instruct subsets derived from different original data sources (Spider, MultiTabQA, MiMo+ATIS, and the full MTabVQA-Instruct set).
+                SFT yielded substantial performance gains over both CoT and GRPO, boosting EM to 28.0% and F1 to 55.9%
+                on the corresponding MTabVQA-Eval split. This demonstrates the strong effectiveness of targeted
+                instruction tuning for this complex multi-hop reasoning task. While GRPO showed improvement, its gains
+                did not surpass SFT with LoRA, possibly due to the challenge of defining a more sophisticated reward
+                function for visual multi-tabular reasoning.
+              </p>
+              <figure class="text-center">
+                <img src="./img/bars.png" alt="Performance of Post-Training Strategies" style="width: 80%"
+                  class="img-fluid">
+                <figcaption style="margin-top: 100px;">
+                  <strong>Figure 3:</strong> Performance comparison of post-training strategies.
+                </figcaption>
+              </figure>
 
-Generally, more fine-tuning data led to better EM and F1 scores. The model trained on the full MTabVQA-Instruct dataset (15,853 diverse examples) achieved the highest overall F1 score (68.2%). However, the source of the data was critically important. For instance, a model trained only on the large MultiTabQA subset performed surprisingly poorly overall, suggesting that data characteristics and alignment with the benchmark are crucial. This highlights that while scaling instruction data is advantageous, the relevance and diversity of this data with respect to the target tasks are paramount for achieving optimal performance and generalization.
-                    </p>
-                    <figure class="text-center">
-                        <img src="./img/data.png" alt="Impact of Data Scale and Source" style="width: 100%" class="img-fluid">
-                        <figcaption style="margin-top: 10px;">
-                            <strong>Table 2:</strong> Impact of fine-tuning data source and size on overall performance.
-                        </figcaption>
-                    </figure>
-                </div>
+              <h4 class="mt-4">Impact of Post-Training Data Scale and Source</h4>
+              <p>
+                We further analyzed how VLM performance is affected by the scale and source of data used for instruction
+                fine-tuning. Using Qwen2.5-VL-7B as the base VLM, we fine-tuned it on several MTabVQA-Instruct subsets
+                derived from different original data sources (Spider, MultiTabQA, MiMo+ATIS, and the full
+                MTabVQA-Instruct set).
+
+                Generally, more fine-tuning data led to better EM and F1 scores. The model trained on the full
+                MTabVQA-Instruct dataset (15,853 diverse examples) achieved the highest overall F1 score (68.2%).
+                However, the source of the data was critically important. For instance, a model trained only on the
+                large MultiTabQA subset performed surprisingly poorly overall, suggesting that data characteristics and
+                alignment with the benchmark are crucial. This highlights that while scaling instruction data is
+                advantageous, the relevance and diversity of this data with respect to the target tasks are paramount
+                for achieving optimal performance and generalization.
+              </p>
+              <figure class="text-center">
+                <img src="./img/data.png" alt="Impact of Data Scale and Source" style="width: 100%" class="img-fluid">
+                <figcaption style="margin-top: 10px;">
+                  <strong>Table 2:</strong> Impact of fine-tuning data source and size on overall performance.
+                </figcaption>
+              </figure>
             </div>
+          </div>
         </div>
       </div>
       <div class="card-header" id="leaderboard-header">
         <h4>Acknowledgement</h4>
-    </div>
-        <p>
-          This website is based on the layout from the <a href="https://t2-rag-benchmark.github.io/" target="_blank">T²-RAGBench</a> and <a href="https://neulab.github.io/Pangea/"
-          target="_blank">Pangea</a> project pages.
-        </p>
+      </div>
+      <p>
+        This website is based on the layout from the <a href="https://t2-rag-benchmark.github.io/"
+          target="_blank">T²-RAGBench</a> and <a href="https://neulab.github.io/Pangea/" target="_blank">Pangea</a>
+        project pages.
+      </p>
     </div>
     <hr />
 

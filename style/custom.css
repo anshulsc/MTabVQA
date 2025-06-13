@@ -225,7 +225,8 @@ span.line {
 #button-group {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Increased from 10px for more margin */
+    gap: 10px;
+    /* Increased from 10px for more margin */
     margin-top: 10px;
 }
 
@@ -258,16 +259,21 @@ span.line {
     font-weight: bold;
     width: 100%;
     text-transform: none;
-    background-color: rgb(23, 70, 212); /* Changed to royalblue */
-    border-color: royalblue;      /* Changed to royalblue */
-    border-radius: 15px;          /* Increased for a rounder curve */
+    background-color: rgb(23, 70, 212);
+    /* Changed to royalblue */
+    border-color: royalblue;
+    /* Changed to royalblue */
+    border-radius: 15px;
+    /* Increased for a rounder curve */
     padding: 10px 15px;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .btn-d:hover {
-    background-color: forestgreen; /* Changed hover color to green */
-    border-color: forestgreen;      /* Changed hover border to green */
+    background-color: forestgreen;
+    /* Changed hover color to green */
+    border-color: forestgreen;
+    /* Changed hover border to green */
     color: #fff;
 }
 
@@ -445,16 +451,22 @@ span.line {
 .scroll-container:hover::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
 figure .img-fluid {
     max-width: 45%;
-    margin: 20px auto 5px; /* Keeps 20px top margin, but reduces bottom margin to 5px */
+    margin: 20px auto 5px;
+    /* Keeps 20px top margin, but reduces bottom margin to 5px */
     display: block;
 }
+
 figcaption {
     text-align: center !important;
     margin-top: -200px;
 }
+
 #leaderboard-header {
-    font-size: 1.5rem; /* Makes the font bigger */
-    font-weight: bold; /* Makes the font bold */
+    font-size: 1.5rem;
+    /* Makes the font bigger */
+    font-weight: bold;
+    /* Makes the font bold */
 }
